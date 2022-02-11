@@ -1,7 +1,7 @@
 package Concurrent_Programming;
 
 // Threading is done from thread-inheriting objects
-// The function start() throw threads
+// The function start() is used to launch threads
 // The threads doesn't execute in order that are thrown
 // We don't know the threads execution order
 
@@ -19,6 +19,7 @@ public class Main extends Thread {
     }
 
     public static void main(String[] args) {
+        // Creates each object that it will be used to launch each thread
         Main thread1 = new Main(1);
         Main thread2 = new Main(2);
         Main thread3 = new Main(3);
