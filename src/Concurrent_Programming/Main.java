@@ -8,7 +8,6 @@ package Concurrent_Programming;
 public class Main extends Thread {
 
     private int id;
-
     public Main (int id){
         this.id = id;
     }
