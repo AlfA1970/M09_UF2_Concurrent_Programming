@@ -1,8 +1,6 @@
-package Concurrent_Programming;
+package Concurrent_Programming.Indeterminsm;
 
-// INDETERMINISM: When two or more threads write in the same static variable
-// the final varible value will be indeterminated
-
+// INDETERMINISM: When two or more threads write in the same static variable the final varible value will be indeterminated
 // For resolve indeterminism is used the mutual exclusion
 // MUTUAL EXCLUSION: Only one thread every time will be able to access inside a static variable
 // CRITICAL SECTION: Code part where it's could produce indeterminism
