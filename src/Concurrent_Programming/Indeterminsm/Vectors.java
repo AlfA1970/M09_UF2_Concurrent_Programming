@@ -7,7 +7,7 @@ package Concurrent_Programming.Indeterminsm;
 
 import java.util.Random;
 
-public class IndeterminismSolution  extends Thread{
+public class Vectors extends Thread{
 
     // Define a static vector
     private final static int size = 8;
@@ -15,7 +15,7 @@ public class IndeterminismSolution  extends Thread{
 
     private int start, end;
 
-    public IndeterminismSolution(int start, int end){
+    public Vectors(int start, int end){
         this.start = start;
         this.end = end;
     }
@@ -33,8 +33,12 @@ public class IndeterminismSolution  extends Thread{
             vec[i] = rand.nextInt(10);
         }
 
-        IndeterminismSolution h1 = new IndeterminismSolution(0,4);
-        IndeterminismSolution h2 = new IndeterminismSolution(4,8);
+        // h1: the end parameter is setted at the number that skip the loop
+        // h2: the start paramenter is setted at the number that start the second part
+        // of the vector.
+        // h1 end & h2 start parameters match at the same number.
+        Vectors h1 = new Vectors(0,4);
+        Vectors h2 = new Vectors(4,8);
 
         h1.start();
         h2.start();
