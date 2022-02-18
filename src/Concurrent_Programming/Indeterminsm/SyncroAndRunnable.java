@@ -4,17 +4,24 @@ package Concurrent_Programming.Indeterminsm;
 // manage different items. In this case we can use the implementation of the Runnable interface.
 // This method of throwing threads allows you to use the Thread class when is instanced  a Runnable object.
 
-public class SyncroAndRunnable implements Runnable{
+// SYNCHRONIZED(): This method allows that only one thread access to write into the variable.
+//It needs a lock to control that only one thread it's inside. When the thread will finish
+//to write, will go out from class synchronized allowing to go in the next thread.
+//In this example, the for loop is inside the sinchonized method. Every
+//thread will do all the iterations when go in. Reducing the process time and optimizing the resources.
+
+public class SyncroAndRunnable implements Runnable {
 
     private static int cont = 0;
     private static Object object = new Object();
 
     @Override
     public void run() {
-        for(int i=0; i < 120000; i++){
-            synchronized (object){
+
+        synchronized (object) {
+            for (int i = 0; i < 820000; i++) {
                 cont++;
-            };
+            }
         }
     }
 
@@ -24,13 +31,13 @@ public class SyncroAndRunnable implements Runnable{
 
         Thread[] threads = new Thread[cores];
 
-        for(int i=0; i<threads.length; i++){
+        for (int i = 0; i < threads.length; i++) {
             Runnable runnable = new SyncroAndRunnable();
             threads[i] = new Thread(runnable);  // Initialize a thread vector with a runnable object
             threads[i].start();
         }
 
-        for(int i=0; i<threads.length; i++) {
+        for (int i = 0; i < threads.length; i++) {
 
             try {
                 threads[i].join();
