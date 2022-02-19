@@ -2,6 +2,14 @@ package Concurrent_Programming.Indeterminsm;
 
 import java.util.Random;
 
+/* In this exemple saw it how we can order the threads in a certain way.
+   It's used the synchronized method combinated with wait() and notifyAll methods.
+   Synchronized method controls that only one thread is working into it.
+   Wait() method do a qeue into a while loop that order each thread.
+   Finally the notifyAll() method release the threads into the wait() qeue otherwise
+   they could never be released.
+*/
+
 public class WaitAndNotifyAll implements Runnable {
 
     private int id;
@@ -48,5 +56,6 @@ public class WaitAndNotifyAll implements Runnable {
         }
 
         System.out.println("I'm the thread: main");
+        System.out.println("Free memory: ");
     }
 }
