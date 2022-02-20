@@ -34,7 +34,6 @@ public class BufferStrategy implements Runnable{
         synchronized (lockA){
             cont += contPrivate;
         }
-
     }
 
     public static void main(String[] args) {
@@ -57,6 +56,5 @@ public class BufferStrategy implements Runnable{
         }
 
         System.out.println("The amount of itarations are: " + cont);
-
     }
 }
