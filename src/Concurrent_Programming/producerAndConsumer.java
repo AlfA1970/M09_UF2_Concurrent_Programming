@@ -32,7 +32,7 @@ public class producerAndConsumer implements Runnable{
         synchronized (look){
             if(cake==0){
                 cake = 10;
-                System.out.println("I'm the baker and the're " + cake + " portions left");
+                System.out.println("I'm the baker and there are " + cake + " portions left");
                 look.notifyAll(); // wake up all threads
             }
 
@@ -46,9 +46,9 @@ public class producerAndConsumer implements Runnable{
         synchronized (look){
             if(cake>0){
                 cake--;
-                System.out.println("I'm the consumer, the're " + cake + " cake portions");
+                System.out.println("I'm the consumer, there are " + cake + " cake portions");
                 try {
-                    Thread.sleep(1000); // Force the thread to wait for one second.
+                    Thread.sleep(1500); // Force the thread to wait for one second.
                 } catch (InterruptedException e) {}
 
             } else {
