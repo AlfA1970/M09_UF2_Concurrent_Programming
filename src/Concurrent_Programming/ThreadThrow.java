@@ -5,10 +5,10 @@ package Concurrent_Programming;
 // The threads doesn't execute in order that are thrown
 // We don't know the threads execution order
 
-public class ThreadTrow extends Thread {
+public class ThreadThrow extends Thread {
 
     private int id;
-    public ThreadTrow(int id){
+    public ThreadThrow(int id){
         this.id = id;
     }
 
@@ -19,9 +19,9 @@ public class ThreadTrow extends Thread {
 
     public static void main(String[] args) {
         // Creates each object that it will be used to launch each thread
-        ThreadTrow thread1 = new ThreadTrow(1);
-        ThreadTrow thread2 = new ThreadTrow(2);
-        ThreadTrow thread3 = new ThreadTrow(3);
+        ThreadThrow thread1 = new ThreadThrow(1);
+        ThreadThrow thread2 = new ThreadThrow(2);
+        ThreadThrow thread3 = new ThreadThrow(3);
 
         // Throwing the first thread
         thread1.start();
