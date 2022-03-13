@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Matrix  extends Thread{
 
-    private static int size = 8;
+    private static int size = 19200;
     private static int [][]matrix =new int[size][size];
 
     private int start, end;
@@ -37,22 +37,22 @@ public class Matrix  extends Thread{
 
         initTime = System.nanoTime(); // Time in nanoseconds;
 
-        Matrix h1 =new Matrix(0,4000);
-        Matrix h2 =new Matrix(4000,6000);
-        Matrix h3 =new Matrix(6000,8000);
+        Matrix h1 =new Matrix(0,19200);
+        //Matrix h2 =new Matrix(4000,8000);
+        //Matrix h3 =new Matrix(4000,6000);
         //Matrix h4 =new Matrix(6000,8000);
 
         /* Playing with the different instances it can observe how long it takes
          processors to finish the work assigned to each one. */
         h1.start();
-        h2.start();
-        h3.start();
+        //h2.start();
+        //h3.start();
         //h4.start();
 
         try{
             h1.join();
-            h2.join();
-            h3.join();
+            //h2.join();
+            //h3.join();
             //h4.join();
         }catch (Exception e){}
 
@@ -60,13 +60,14 @@ public class Matrix  extends Thread{
 
         System.out.println((endTime / 1000000) + " miliseconds");
 
+        /*
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
                // System.out.print(matrix[i][j] + " ");
             }
 
             //System.out.println();
-        }
+        } */
 
     }
 }

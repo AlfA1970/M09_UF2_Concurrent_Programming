@@ -13,13 +13,13 @@ package Concurrent_Programming.Indeterminsm;
 public class SyncroAndRunnable implements Runnable {
 
     private static int cont = 0;
-    private static Object object = new Object();
+    private static Object lock = new Object();
 
     @Override
     public void run() {
 
-        synchronized (object) {
-            for (int i = 0; i < 820000; i++) {
+        synchronized (lock) {
+            for (int i = 0; i < 1000; i++) {
                 cont++;
             }
         }
@@ -36,6 +36,7 @@ public class SyncroAndRunnable implements Runnable {
             threads[i] = new Thread(runnable);  // Initialize a thread vector with a runnable object
             threads[i].start();
         }
+
 
         for (int i = 0; i < threads.length; i++) {
 
